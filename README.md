@@ -16,3 +16,7 @@ The greenhouse API reproduced current weather from a selected city in the greenh
  - Temperature
  - Humidity
  - Light
+
+# See also:
+Yocto distribution for BeagleBone Black
+https://github.com/enoriel/meta-ynov
