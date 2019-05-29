@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>HomeForm.ui.qml</file>
+        <file>manForm.ui.qml</file>
+        <file>config.ui.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>img/svg/wi-celsius.svg</file>
+        <file>img/svg/wi-sleet.svg</file>
+        <file>img/svg/wi-thermometer.svg</file>
+        <file>img/svg/wi-umbrella.svg</file>
+        <file>main.cpp</file>
+        <file>weather.cpp</file>
+        <file>img/svg/dropwater.svg</file>
+        <file>img/svg/reboot.svg</file>
+    </qresource>
+</RCC>
