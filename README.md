@@ -1,7 +1,7 @@
 ![Alt text](img/aero.png "Ynov Estei")
 # SmartGreenHouse
 
-Group member:
+# Group member:
 - EL MERNISSI YASSINE
 - MOLES Sébastien (https://github.com/sebastienmoles/Smart-Greenhouse)
 - RENAUD Pierre-Louis
