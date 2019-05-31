@@ -1,5 +1,5 @@
 ![Alt text](img/aero.png "Ynov Estei")
-# SmartGreenHouse
+## SmartGreenHouse
 
 # Group member:
 - EL MERNISSI YASSINE
