@@ -37,10 +37,10 @@ Page {
 
     Button {
         id: btn_shutdon
-        x: 46
-        y: 155
-        width: 130
-        height: 130
+        x: 55
+        y: 126
+        width: 250
+        height: 250
         text: qsTr("Eteindre")
         checked: false
         padding: 2
@@ -66,10 +66,10 @@ Page {
 
     Button {
         id: btn_reboot
-        x: 201
-        y: 155
-        width: 130
-        height: 130
+        x: 326
+        y: 126
+        width: 250
+        height: 250
         text: qsTr("Redémarrer")
         checked: false
         padding: 2

@@ -124,9 +124,9 @@ Pays:")
         Rectangle {
             id: input_rect2
             x: 362
-            y: 15
+            y: 6
             width: 324
-            height: 24
+            height: 39
             color: "#f5f5f5"
             radius: 4
             visible: true
@@ -137,18 +137,19 @@ Pays:")
                 objectName: "city"
                 x: 4
                 y: 0
-                width: 312
-                height: 24
-                font.pixelSize: 12
+                width: 320
+                height: 39
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 18
             }
         }
 
         Rectangle {
             id: input_rect
             x: 362
-            y: 45
+            y: 51
             width: 324
-            height: 24
+            height: 32
             color: "#f5f5f5"
             radius: 4
             visible: true
@@ -159,9 +160,10 @@ Pays:")
                 objectName: "country"
                 x: 5
                 y: 0
-                width: 304
-                height: 24
-                font.pixelSize: 12
+                width: 319
+                height: 37
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 18
             }
         }
 
@@ -205,10 +207,10 @@ Pays:")
     // Status and weather windows
     Rectangle {
         id: main_window
-        x: 40
+        x: 0
         y: 103
-        width: 720
-        height: 290
+        width: 800
+        height: 377
         color: "#ffffff"
         radius: 6
 
@@ -217,21 +219,21 @@ Pays:")
             x: 398
             y: 15
             width: 13
-            height: 267
+            height: 294
         }
 
         Item {
             id: param_serre
             x: 408
             y: 8
-            width: 304
+            width: 384
             height: 258
 
             ToolSeparator {
                 id: toolSeparator1
-                x: 8
+                x: 43
                 y: 47
-                width: 290
+                width: 324
                 height: 5
             }
 
@@ -239,7 +241,7 @@ Pays:")
                 id: element
                 x: 1
                 y: 10
-                width: 306
+                width: 375
                 height: 31
                 color: "#000000"
                 text: qsTr("Paramètres de la serre connectée")
@@ -252,66 +254,68 @@ Pays:")
 
             StatusIndicator {
                 id: statusLigth
-                x: 11
-                y: 58
-                width: 26
-                height: 29
+                x: 5
+                y: 71
+                width: 50
+                height: 50
                 color: "#0cbc16"
                 active: weather.lightStatus
             }
 
             Text {
                 id: element1
-                x: 43
-                y: 58
-                width: 176
-                height: 29
+                x: 64
+                y: 71
+                width: 191
+                height: 50
                 text: qsTr("Etat de l'éclairage")
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: 14
+                font.pixelSize: 22
             }
 
             Text {
                 id: element2
-                x: 43
-                y: 106
-                width: 127
-                height: 22
+                x: 68
+                y: 124
+                width: 174
+                height: 60
                 text: qsTr("Humidité au sol:")
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: 14
+                font.pixelSize: 23
             }
 
             Text {
                 id: element3
-                x: 43
-                y: 153
-                width: 127
-                height: 22
+                x: 60
+                y: 190
+                width: 146
+                height: 60
                 text: qsTr("Humidité de l'air:")
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: 14
+                font.pixelSize: 23
             }
 
             Image {
                 id: image2
-                x: 182
-                y: 196
-                width: 29
-                height: 26
-                sourceSize.height: 29
-                sourceSize.width: 29
+                x: 284
+                y: 257
+                width: 56
+                height: 56
+                sourceSize.height: 56
+                sourceSize.width: 56
                 fillMode: Image.PreserveAspectFit
                 source: "img/svg/wi-celsius.svg"
             }
 
             Image {
                 id: image
-                x: 11
-                y: 194
-                sourceSize.height: 30
-                sourceSize.width: 30
+                x: 0
+                y: 256
+                width: 60
+                height: 60
+                sourceSize.height: 60
+                sourceSize.width: 60
                 fillMode: Image.PreserveAspectFit
                 source: "img/svg/wi-thermometer.svg"
             }
@@ -319,63 +323,70 @@ Pays:")
             Text {
                 id: element4
                 x: 43
-                y: 198
-                width: 94
-                height: 22
+                y: 266
+                width: 115
+                height: 38
                 text: qsTr("Température:")
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: 14
+                font.pixelSize: 26
             }
 
             Label {
                 id: gnd_humidity
-                x: 169
-                y: 108
-                width: 33
-                height: 20
-                font.pointSize: 14
+                x: 274
+                y: 139
+                width: 45
+                height: 31
+                font.pointSize: 18
                 text: weather.humGnd
+                verticalAlignment: Text.AlignVCenter
             }
 
             Label {
                 id: temp_s_value
-                x: 140
-                y: 196
-                width: 41
-                height: 22
-                horizontalAlignment: Text.AlignRight
-                font.pointSize: 14
+                x: 223
+                y: 266
+                width: 60
+                height: 38
+                horizontalAlignment: Text.AlignLeft
+                font.pointSize: 20
                 text: weather.tempGH
+                verticalAlignment: Text.AlignVCenter
             }
 
             Image {
                 id: image1
-                x: 11
-                y: 148
-                sourceSize.height: 30
-                sourceSize.width: 30
+                x: 0
+                y: 190
+                width: 60
+                height: 60
+                sourceSize.height: 60
+                sourceSize.width: 60
                 fillMode: Image.PreserveAspectFit
                 source: "img/svg/wi-umbrella.svg"
             }
 
             Image {
                 id: image3
-                x: 11
-                y: 102
-                sourceSize.height: 30
-                sourceSize.width: 30
+                x: 0
+                y: 124
+                width: 60
+                height: 60
+                sourceSize.height: 60
+                sourceSize.width: 60
                 fillMode: Image.PreserveAspectFit
                 source: "img/svg/wi-sleet.svg"
             }
 
             Label {
                 id: air_humidity
-                x: 164
-                y: 153
-                width: 33
-                height: 22
-                font.pointSize: 14
+                x: 266
+                y: 190
+                width: 53
+                height: 60
                 text: weather.humAir
+                verticalAlignment: Text.AlignVCenter
+                font.pointSize: 20
             }
         }
 
@@ -384,7 +395,7 @@ Pays:")
             x: 8
             y: 8
             width: 384
-            height: 282
+            height: 314
             visible: true
 
             ToolSeparator {
@@ -472,8 +483,8 @@ Pays:")
 
             Label {
                 id: city_name
-                x: 134
-                y: 191
+                x: 73
+                y: 214
                 width: 249
                 height: 38
                 text: weather.city
@@ -489,47 +500,47 @@ Pays:")
             Text {
                 id: sunrise
                 x: 8
-                y: 224
+                y: 250
                 width: 99
                 height: 29
                 text: qsTr("Lever de soleil:")
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: 14
+                font.pixelSize: 18
             }
 
             Text {
                 id: sunset
                 x: 8
-                y: 254
-                width: 120
+                y: 280
+                width: 152
                 height: 29
                 text: qsTr("Coucher de soleil:")
                 horizontalAlignment: Text.AlignLeft
-                font.pixelSize: 14
+                font.pixelSize: 18
                 verticalAlignment: Text.AlignVCenter
             }
 
             Label {
                 id: sunrise_value
-                x: 113
-                y: 227
-                width: 149
+                x: 147
+                y: 253
+                width: 150
                 height: 24
                 text: weather.sunrise
                 font.bold: false
-                font.pointSize: 12
+                font.pointSize: 14
                 verticalAlignment: Text.AlignVCenter
             }
 
             Label {
                 id: sunset_value
-                x: 134
-                y: 257
-                width: 138
+                x: 172
+                y: 283
+                width: 126
                 height: 24
                 text: weather.sunset
-                font.pointSize: 12
+                font.pointSize: 14
                 verticalAlignment: Text.AlignVCenter
             }
 
@@ -579,3 +590,4 @@ Pays:")
         }
     }
 }
+

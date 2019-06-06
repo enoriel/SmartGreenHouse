@@ -34,7 +34,7 @@ public slots:
 //    ~serialCom();
 private:
     QSerialPort *m_serial;
-    QString m_port = "/dev/ttyUSB0";
+    QString m_port = "/dev/ttyO4";
     QString m_buffer, m_cmd;
     // Key words for parsing our buffer
     QString error_reply = "Erreur";

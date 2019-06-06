@@ -14,7 +14,7 @@ BackLight::BackLight(QObject *parent) : QObject(parent)
 void BackLight::setBacklight(QString value)
 {
     cmd->start("sh");
-    cmd_str = "echo "+value+" > /home/enoriel/testbl.txt";
+    cmd_str = "echo "+value+" > /sys/class/backlight/backlight/brightness";
     cmd->write(cmd_str.toUtf8());
     cmd->closeWriteChannel();
     cmd->waitForFinished();

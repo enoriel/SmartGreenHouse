@@ -1,3 +1,4 @@
+
 #include "weather.h"
 
 Weather::Weather(QObject *parent) :
@@ -58,12 +59,12 @@ void Weather::setLightStatus(bool status)
         cmd = eclairage_horitcole_ON;
     if (status == false)
         cmd = eclairage_horticole_OFF;
-    int ret = m_serial->openCom();
-    if (ret == 0)
-    {
+//    int ret = m_serial->openCom();
+//    if (ret == 0)
+//    {
         m_serial->sendCommand(cmd.toLocal8Bit());
-        m_serial->close();
-    }
+//        m_serial->close();
+//    }
 
     // Change display status (led on/off)
     m_statusLight = status;
@@ -76,7 +77,7 @@ void Weather::setLightStatus(bool status)
 void Weather::sendTemp()
 {
         m_serial->sendCommand(QString::number((m_temp-273.15),'f',0).toLocal8Bit());
-        m_serial->close();
+//        m_serial->close();
 }
 
 // Request greenhouse's temperature
@@ -84,13 +85,12 @@ void Weather::setTempGH()
 {
     int ret = 0;
     // Opening com port then requesting temp
-    ret = m_serial->openCom();
-    if (ret == 0)
-    {
+//    ret = m_serial->openCom();
+//    if (ret == 0)
+//    {
         m_serial->sendCommand("t");
         m_serial->waitForAnswer();
-    }
-
+//    }
 }
 
 // Request greenhouse's air humidity
@@ -98,12 +98,12 @@ void Weather::setHAirGH()
 {
     int ret = 0;
     // Opening com port then requesting  air humidity
-    ret = m_serial->openCom();
-    if (ret == 0)
-    {
+//    ret = m_serial->openCom();
+//    if (ret == 0)
+//    {
         m_serial->sendCommand("h");
         m_serial->waitForAnswer();
-    }
+//    }
 }
 
 // Request greenhouse's ground humidity
@@ -111,12 +111,12 @@ void Weather::setHGndGH()
 {
     int ret = 0;
     // Opening com port then requesting  air humidity
-    ret = m_serial->openCom();
-    if (ret == 0)
-    {
+//    ret = m_serial->openCom();
+//    if (ret == 0)
+//    {
         m_serial->sendCommand("s");
         m_serial->waitForAnswer();
-    }
+//    }
 }
 
 /* Sending air humidity to the greenhouse by serial port
@@ -125,7 +125,7 @@ void Weather::setHGndGH()
 void Weather::sendHumAir()
 {
         m_serial->sendCommand(QString::number(m_humidity).toLocal8Bit());
-        m_serial->close();
+//        m_serial->close();
 }
 
 /* Sending ground humidity to the greenhouse by serial port
@@ -134,7 +134,7 @@ void Weather::sendHumAir()
 void Weather::sendHumGnd()
 {
         m_serial->sendCommand(m_humGnd.toLocal8Bit());
-        m_serial->close();
+//        m_serial->close();
 }
 
 void Weather::setIcon()
@@ -218,21 +218,21 @@ void Weather::setUrl(int id, const QString &msg1, const QString &msg2)
 void Weather::setGHAirHum(QString buffer)
 {
     m_humAir = buffer.left(2);
-    m_serial->close();
+//    m_serial->close();
     emit updateGH();
 }
 
 void Weather::setGHGndHum(QString buffer)
 {
     m_humGnd = buffer.left(2);
-    m_serial->close();
+//    m_serial->close();
     emit updateGH();
 }
 
 void Weather::setGHTemp(QString buffer)
 {
     m_tempGH = buffer.left(4);
-    m_serial->close();
+//    m_serial->close();
     emit updateGH();
 }
 
@@ -267,13 +267,13 @@ void Weather::updateAirHumGH()
     {
         m_humidity = tmpHumAir;
         // Opening Serial Port and sending message
-        ret = m_serial->openCom();
-        if (ret == 0)
-        {
+//        ret = m_serial->openCom();
+//        if (ret == 0)
+//        {
             // Requesting air humidity update (msg character "2")
             m_serial->sendCommand("2");
             m_serial->waitForAnswer();
-        }
+//        }
     }
 }
 
@@ -285,13 +285,13 @@ void Weather::updateTempGH()
     {
         m_temp = tmpTemp;
         // Opening Serial Port and sending message
-        ret = m_serial->openCom();
-        if (ret == 0)
-        {
+//        ret = m_serial->openCom();
+//        if (ret == 0)
+//        {
             // Requesting temperature update (msg character "1")
             m_serial->sendCommand("1");
             m_serial->waitForAnswer();
-        }
+//        }
     }
 }
 

@@ -1,4 +1,4 @@
-QT += quick qml serialport network widgets
+QT += quick qml serialport network widgets core
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use

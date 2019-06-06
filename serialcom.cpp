@@ -21,15 +21,15 @@ serialCom::serialCom(QObject *parent) : QObject(parent)
     m_serial->setParity(QSerialPort::NoParity);
     m_serial->setFlowControl(QSerialPort::NoFlowControl);
 
-//    if(!m_serial->open(QIODevice::ReadWrite))
-//    {
-//        QMessageBox msgBox;
-//        // Debug message for developpers
-//        qDebug() <<QObject::tr("Impossible d'ouvrir le port série %1...").arg(m_serial->portName());
-//        // Error message for users
-//        msgBox.setText("Connexion à la serre impossible. Si le problème persiste contactez l'assistance.");
-//        msgBox.exec();
-//    }
+    if(!m_serial->open(QIODevice::ReadWrite))
+    {
+        QMessageBox msgBox;
+        // Debug message for developpers
+        qDebug() <<QObject::tr("Impossible d'ouvrir le port série %1...").arg(m_serial->portName());
+        // Error message for users
+        msgBox.setText("Connexion à la serre impossible. Si le problème persiste contactez l'assistance.");
+        msgBox.exec();
+    }
 }
 
 void serialCom::handleError(QSerialPort::SerialPortError error)
@@ -143,9 +143,7 @@ int serialCom::openCom()
         return -1;
     }
     else
-    {
         return 0;
-    }
 }
 
 //serialCom::~serialCom()
